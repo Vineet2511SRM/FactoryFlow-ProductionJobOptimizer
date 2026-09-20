@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   CSS Architecture - Design Tokens & Custom Variables
+   ========================================================================== */
+:root {
+  --color-canvas: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  
+  /* Machine Stage Tokens */
+  --m1-stage-color: #4f46e5;
+  --m2-stage-color: #7c3aed;
+  --idle-accent: #f43f5e;
+  --profit-accent: #059669;
+  --warning-accent: #d97706;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-canvas);
+    color: var(--color-text-main);
+    overflow-x: hidden;
+  }
+}
+
+/* ==========================================================================
+   Component Layer - Factory Control Center Architecture
+   ========================================================================== */
+@layer components {
+  /* Subtle Technical Engineering Grid */
+  .factory-grid {
+    background-size: 24px 24px;
+    background-image: 
+      linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+  }
+
+  /* Machine B Idle Bottleneck Indicator Pattern */
+  .idle-striped-pattern {
+    background-color: #fff1f2;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #ffe4e6,
+      #ffe4e6 8px,
+      #fff1f2 8px,
+      #fff1f2 16px
+    );
+  }
+
+  /* Urgent Orders Gantt Idle Slot Pattern */
+  .idle-amber-pattern {
+    background-color: #fefce8;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #fef9c3,
+      #fef9c3 8px,
+      #fefce8 8px,
+      #fefce8 16px
+    );
+  }
+
+  /* Compact Timeline Segment */
+  .timeline-segment {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    user-select: none;
+    transition: filter 0.15s ease, opacity 0.15s ease;
+  }
+
+  .timeline-segment:hover {
+    filter: brightness(0.96);
+  }
+}
+
+/* ==========================================================================
+   Smooth Custom Scrollbars
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
